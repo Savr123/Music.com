@@ -1,0 +1,1555 @@
+
+black-heart:
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M89.01,48.17L51.5,90.48c-0.38,0.43-0.92,0.67-1.5,0.67s-1.12-0.25-1.5-0.67L10.99,48.17c-6.1-6.89-7.68-16.49-4.12-25.05  c3.48-8.39,10.9-13.7,19.84-14.22c0.53-0.03,1.06-0.05,1.6-0.05c8.63,0,16.54,3.97,21.69,10.75c5.15-6.78,13.05-10.75,21.69-10.75  c0.54,0,1.07,0.02,1.6,0.05c8.94,0.52,16.35,5.83,19.84,14.22C96.69,31.68,95.11,41.28,89.01,48.17z"/><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Mark Anventura</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+
+empty-heart:
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M89.01,48.17L51.5,90.48c-0.38,0.43-0.92,0.67-1.5,0.67s-1.12-0.25-1.5-0.67L10.99,48.17c-6.1-6.89-7.68-16.49-4.12-25.05  c3.48-8.39,10.9-13.7,19.84-14.22c0.53-0.03,1.06-0.05,1.6-0.05c8.63,0,16.54,3.97,21.69,10.75c5.15-6.78,13.05-10.75,21.69-10.75  c0.54,0,1.07,0.02,1.6,0.05c8.94,0.52,16.35,5.83,19.84,14.22C96.69,31.68,95.11,41.28,89.01,48.17z"/><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Mark Anventura</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+
+
+  <nav class="navbar navbar-expand-lg spec-navbar mb-5 mr-0 pr-0">
+    <a class="navbar-brand" href="#"><span class="logo text-dark">MusicPlay</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <form class="form-inline my-2 my-lg-0 mr-auto">
+      <input class="form-control mr-sm-2 spec-search" type="text" placeholder="Трек, альбом, исполнитель">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Поиск</button>
+    </form>
+
+    <div class="collapse navbar-collapse ml-1" id="navbarColor02">
+      <ul class="navbar-nav ml-auto mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="#">Главное <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="spec-nav-personal">
+      <?php
+      if (isset($_SESSION['logged_user'])) : ?>
+        <div class="spec-dropdown-menu">
+          <!-- катаог: Моя музыка -->
+          <span class="spec-nav-link-anim"><a href="" dats-src="/Music.com/php/" id="spec-nav-link-liked" class="nav-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/>
+            </svg>
+            Моя Музыка
+          </a></span>
+          <!-- профиль -->
+          <a  class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+          <?php include_once('/Music.com/php/personFrame.php') ?>
+        </div>
+      <?php else : ?>
+        <!-- Кнопка: Войти -->
+        <button id="login" onclick='location.href="php/login.php"' type="button" name="login" class="btn spec-btn-log">Войти</button>
+      <?php endif; ?>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  <?php
+    require_once 'php/config.php';
+
+    set_include_path('Z:/home/localhost/www');
+  ?>
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <?php include_once 'php/head.php' ?>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <!--header-------------------------------------------------------------->
+    		<header>
+
+
+
+
+
+    			<!---->
+
+
+
+
+          <script type="text/javascript">
+          function iframeChange() {
+            var buttons = document.querySelector(".loadMainFrame"),
+                iframe = document.getElementById('MainFrame');
+
+            buttons.addEventListener("click", function (e) {
+                iframe.src = e.target.dataset.src;
+            });
+            }
+          window.onload = iframeChange;
+          </script>
+
+
+            <!-- Здесь начинается навигация -->
+            <nav class="navbar navbar-expand-lg spec-navbar mb-5 mr-0 pr-0 loadMainFrame" >
+      				<a class="navbar-brand" href="#"><span class="logo text-dark">MusicPlay</span></a>
+      				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      				<span class="navbar-toggler-icon"></span>
+      				</button>
+
+              <form class="form-inline my-2 my-lg-0 mr-auto">
+                <input class="form-control mr-sm-2 spec-search" type="text" placeholder="Трек, альбом, исполнитель">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Поиск</button>
+              </form>
+
+      				<div class="collapse navbar-collapse ml-1" id="navbarColor02">
+      					<ul class="navbar-nav ml-auto mr-auto">
+      					  <li class="nav-item active">
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="#">Главное <span class="sr-only">(current)</span></a>
+      					  </li>
+      					  <li class="nav-item">
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+      					  </li>
+      					  <li class="nav-item">
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+      					  </li>
+      					  <li class="nav-item">
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+      					  </li>
+      					</ul>
+      				</div>
+
+              <div class="collapse navbar-collapse" id="spec-nav-personal" dats-src="/Music.com/php/personFrame.php">
+                <?php
+                if (isset($_SESSION['logged_user'])) : ?>
+                  <div class="spec-dropdown-menu">
+                    <!-- катаог: Моя музыка -->
+                    <span class="spec-nav-link-anim"><a href="#" id="spec-nav-link-liked" class="nav-link">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/>
+                      </svg>
+                      Моя Музыка
+                    </a></span>
+                    <!-- профиль -->
+                    <a  dats-src="/Music.com/php/personFrame.php" class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+                    <?php include_once('/Music.com/php/personFrame.php') ?>
+                  </div>
+                <?php else : ?>
+                  <!-- Кнопка: Войти -->
+                  <button id="login" onclick='location.href="php/login.php"' type="button" name="login" class="btn spec-btn-log">Войти</button>
+                <?php endif; ?>
+              </div>
+      			</nav>
+            <!-- Здесь начинается iframe -->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="/Music.com/php/mainPage.php" width="100%" height="" id="MainFrame"></iframe>
+            </div>
+            <script type="text/javascript">
+              $('.loadMainFrame').on('click', function(){
+                var src = $(this).data('src');
+                if(src!=undefined){
+                  $('#frame').attr('src', src);
+                }
+              });
+            </script>
+          </div>
+
+
+
+
+
+
+    		</header>
+
+    		<!---Main---------------------------------------------------------------->
+    		<main>
+    		</main>
+      </div>
+  </html>
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+<?php
+  require_once 'php/config.php';
+
+  set_include_path('Z:/home/localhost/www');
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <?php include_once 'php/head.php' ?>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!--header-------------------------------------------------------------->
+  		<header>
+  			<nav class="navbar navbar-expand-lg spec-navbar mb-5 mr-0 pr-0">
+  				<a class="navbar-brand" href="#"><span class="logo text-dark">MusicPlay</span></a>
+  				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+  				<span class="navbar-toggler-icon"></span>
+  				</button>
+
+          <form class="form-inline my-2 my-lg-0 mr-auto">
+            <input class="form-control mr-sm-2 spec-search" type="text" placeholder="Трек, альбом, исполнитель">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Поиск</button>
+          </form>
+
+  				<div class="collapse navbar-collapse ml-1" id="navbarColor02">
+  					<ul class="navbar-nav ml-auto mr-auto">
+  					  <li class="nav-item active">
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="#">Главное <span class="sr-only">(current)</span></a>
+  					  </li>
+  					  <li class="nav-item">
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+  					  </li>
+  					  <li class="nav-item">
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+  					  </li>
+  					  <li class="nav-item">
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+  					  </li>
+  					</ul>
+  				</div>
+
+          <div class="collapse navbar-collapse" id="spec-nav-personal">
+            <?php
+            if (isset($_SESSION['logged_user'])) : ?>
+              <div class="spec-dropdown-menu">
+
+
+                <!-- катаог: Моя музыка -->
+                <span class="spec-nav-link-anim"><a href="" dats-src="/Music.com/php/" id="spec-nav-link-liked" class="nav-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/>
+                  </svg>
+                  Моя Музыка
+                </a></span>
+                <!-- профиль -->
+                <a  class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+                <?php include_once('/Music.com/php/personFrame.php') ?>
+              </div>
+            <?php else : ?>
+              <!-- Кнопка: Войти -->
+              <button id="login" onclick='location.href="php/login.php"' type="button" name="login" class="btn spec-btn-log">Войти</button>
+            <?php endif; ?>
+          </div>
+  			</nav>
+
+  			<!---->
+  		</header>
+
+  		<!---Main---------------------------------------------------------------->
+  		<main>
+  			<div class="container container-fluid p-1 m-1">
+          <div class="container p-1 m-1">
+            <?php include_once('/Music.com/php/mainPage.php') ?>
+  			  </div>
+        </div>
+  		</main>
+    </div>
+</html>
+
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+  require_once 'php/config.php';
+
+  set_include_path('Z:/home/localhost/www');
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <?php include_once 'php/head.php' ?>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!--header-------------------------------------------------------------->
+      <header>
+
+
+
+
+
+        <!---->
+
+
+
+
+        <script type="text/javascript">
+        function iframeChange() {
+          var buttons = document.querySelector(".loadMainFrame"),
+              iframe = document.getElementById('MainFrame');
+
+          buttons.addEventListener("click", function (e) {
+              iframe.src = e.target.dataset.src;
+          });
+          }
+        window.onload = iframeChange;
+        </script>
+
+
+          <!-- Здесь начинается навигация -->
+          <nav class="navbar navbar-expand-lg spec-navbar mb-5 mr-0 pr-0" >
+            <a class="navbar-brand loadMainFrame" href="#"><span class="logo text-dark" data-src="/Music.com/main.php">MusicPlay</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <form class="form-inline my-2 my-lg-0 mr-auto">
+              <input class="form-control mr-sm-2 spec-search" type="text" placeholder="Трек, альбом, исполнитель">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Поиск</button>
+            </form>
+
+            <div class="collapse navbar-collapse ml-1" id="navbarColor02">
+              <ul class="navbar-nav ml-auto mr-auto loadMainFrame">
+                <li class="nav-item active ">
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/mainPage.php" href="#">Главное <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="spec-nav-personal" dats-src="/Music.com/php/personFrame.php">
+              <?php
+              if (isset($_SESSION['logged_user'])) : ?>
+                <div class="spec-dropdown-menu">
+                  <!-- катаог: Моя музыка -->
+                  <span class="spec-nav-link-anim loadMainFrame"><a href="#" id="spec-nav-link-liked" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/>
+                    </svg>
+                    Моя Музыка
+                  </a></span>
+                  <!-- профиль -->
+                  <a  dats-src="/Music.com/php/personFrame.php" class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+                  <?php include_once('/Music.com/php/personFrame.php') ?>
+                </div>
+              <?php else : ?>
+                <!-- Кнопка: Войти -->
+                <button id="login" onclick='location.href="php/login.php"' type="button" name="login" class="btn spec-btn-log">Войти</button>
+              <?php endif; ?>
+            </div>
+          </nav>
+          <!-- Здесь начинается iframe -->
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="/Music.com/php/mainPage.php" width="100%" height="" id="MainFrame"></iframe>
+          </div>
+          <script type="text/javascript">
+            $('.loadMainFrame').on('click', function(){
+              var src = $(this).data('src');
+              if(src!=undefined){
+                $('#frame').attr('src', src);
+              }
+            });
+          </script>
+        </div>
+
+
+
+
+
+
+      </header>
+
+      <!---Main---------------------------------------------------------------->
+      <main>
+      </main>
+    </div>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------
+
+<div class='flex-grow-1 bd-highlight'>
+    <div class=''>";
+      if($song['name']!='') printf($song['name']);
+      else printf(basename($song['path'],'.mp3'));
+echo "</div>
+
+    <div class=''>".$song['artist']."
+    </div>
+  </div>
+
+  <div class='align-center'>
+    <div class=''>";
+          $mp3file = new MP3File($song['path']);
+          $duration = $mp3file->getDuration();
+          echo MP3File::formatTime($duration)."\n";
+    echo "</div>
+  </div>
+
+
+
+
+-------------------------------------------------------------------------------------------------
+<?php
+  set_include_path('W:/domains/localhost/');
+  require_once "Music.com/php/config.php";
+  require_once "Music.com/php/my_music/mp3Class/mp3file.Class.php";
+?>
+<head>
+  <?php include_once('Music.com/php/head.php'); ?>
+  <script type="text/javascript" src="script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="script/scriptTrack.js"></script>
+</head>
+
+
+<body>
+  <audio id="bjs" src="http://online.radiorecord.ru:8102/tm_128" preload="auto"></audio>
+
+  <div class="text-center">
+
+    <button onClick="document.getElementById('bjs').play()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-play.svg"></button>
+    <button onClick="document.getElementById('bjs').pause()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-pause.svg"></button>
+    <button onClick="document.getElementById('bjs').volume += 0.1" class="btn btn-active" ></button>
+    <button onClick="document.getElementById('bjs').volume -= 0.1" class="btn btn-active" ></button>
+
+  </div>
+  <?php
+    function get_posts($page,$count_per_page) {
+      $start = ($page - 1)*$count_per_page;
+      $songs = R::findALL('song','ORDER BY id LIMIT :start,:limit',
+      array(
+        ':start'=>$start,
+        ':limit'=>$count_per_page)
+      );
+      // $songs= R::loadALL('song','ORDER BY id LIMIT ' )
+
+
+      if(!$songs) {
+        exit("<p>В базе данных не обнаружено таблицы проверте настройки</p>");
+      }
+      return $songs;
+    }
+
+    if($_GET['page']) {
+    	$page = (int)$_GET['page'];
+    	if(!$page) {
+    		$page = 1;
+    	}
+    }
+    else {
+    	$page = 1;
+    }
+
+    $songs =  get_posts($page,$COUNT_PER_PAGE);
+
+
+    if($_GET['move'] == 1) {
+      foreach($songs as $song) {
+
+        echo "<li class='list-group-item'>
+          <div class='for_text d-flex'>
+
+          <div class='button-play' style='position:relative'>
+            <button class='btn btn-active spec-btn-play'>
+              <img class='spec-btn-imgCtrl' src='".$song['img_path'."' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+          <div class='flex-grow-1 bd-highlight'>
+            <div class=''>";
+              if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'));
+          echo "</div>
+
+            <div class="">
+              ".$song['artist']."
+            </div>
+          </div>
+
+          <div class='pt-3'>
+            <div class="">
+                ".
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+                ."
+            </div>
+          </div>
+
+          <div class='button-play' style='position:relative'>
+            <button class='btn btn-active spec-btn-play'>
+              <img class='spec-btn-imgCtrl' src='".$song['img_path']."' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+
+
+          </div>
+        </li>";
+
+    	}
+    	exit();
+    }
+ ?>
+
+  <div id="posts">
+    <ul class="list-group list-group-flush ">
+    <? foreach($songs as $key => $song) :?>
+    <? //for($i=0; $i<10; $i++) :?>
+    <!-- Вывод музыки -->
+      <li class="list-group-item">
+        <div class="for_text d-flex">
+          <div class="button-play " style="position:relative">
+            <button class="btn btn-active spec-btn-play">
+              <img class="spec-btn-imgCtrl" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+          <div class=" flex-grow-1 bd-highlight">
+            <div class="">
+              <? if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'))?>
+            </div>
+
+            <div class="">
+              <?=$song['artist']?>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="">
+                <?php
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+                ?>
+            </div>
+          </div>
+
+        </div>
+        <script type="text/javascript">
+        Array.from(document.getElementsByClassName('spec-btn-imgCtrl')).forEach(function(element){
+            element.onfocus=element.onmouseover=function(){
+              console.log(this.outerHTML);
+              this.outerHTML='<img class="spec-btn-play" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img class="spec-btn-imgCtrl" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+              console.log(this.outerHTML);
+            }
+            // element.onblur=element.onmouseout=function(){
+            //   this.outerHTML="<img class='spec-btn-imgCtrl' src='<?php //echo $song['img_path']?>' width='40' height='40 ' alt=''>";
+            // }
+            // element.onclick=function(){
+            //   console.log(this);
+            //   console.log(document.querySelector('audio').currentTime>0);
+            //   console.log(!document.querySelector('audio').paused);
+            //   console.log(!document.querySelector('audio').ended);
+            //   if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+            //     document.getElementById('bjs').pause();
+            //   }
+            //   else {
+            //     document.getElementById('bjs').play();
+            //   }
+            // }
+            element.onmouseup=function(){
+              console.log(this);
+              console.log('test');
+              console.log('it is up');
+            }
+        })
+          Array.from(document.getElementsByClassName('spec-btn-play')).forEach(function(element){
+            // element.onfocus=element.onmouseover=function(){
+            //   console.log(this.outerHTML);
+            //   this.outerHTML='<img onClick="document.getElementById(\'bjs\').play()" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img  onClick="document.getElementById(\'bjs\').play()" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+            //   console.log(this.outerHTML);
+            // }
+            element.onblur=element.onmouseout=function(){
+              // this.parentNode.removeChild(this);
+              // this.outerHTML="<img class='spec-btn-imgCtrl' src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>";
+              console.log('testOnBlur');
+            }
+            element.onclick = function(){
+              console.log(this);
+              console.log(document.querySelector('audio').currentTime);
+              console.log(document.querySelector('audio').paused);
+              console.log(document.querySelector('audio').ended);
+              if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+                document.querySelector('audio').pause()
+              }
+              else {
+                document.querySelector('audio').play();
+              }
+            }
+        })
+        </script>
+      </li>
+
+
+    <? endforeach; ?>
+      <div class="laod"></div>
+      <div class="pager"> </div>
+  </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </body>
+
+-------------------------------------------------------------------------------------------------
+<?php
+  set_include_path('W:/domains/localhost/');
+  require_once "Music.com/php/config.php";
+  require_once "Music.com/php/my_music/mp3Class/mp3file.Class.php";
+?>
+<head>
+  <?php include_once('Music.com/php/head.php'); ?>
+  <script type="text/javascript" src="script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="script/scriptTrack.js"></script>
+</head>
+
+
+<body>
+  <audio id="bjs" src="http://online.radiorecord.ru:8102/tm_128" preload="auto"></audio>
+
+  <div class="text-center">
+
+    <button onClick="document.getElementById('bjs').play()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-play.svg"></button>
+    <button onClick="document.getElementById('bjs').pause()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-pause.svg"></button>
+    <button onClick="document.getElementById('bjs').volume += 0.1" class="btn btn-active" ></button>
+    <button onClick="document.getElementById('bjs').volume -= 0.1" class="btn btn-active" ></button>
+
+  </div>
+  <?php
+    function get_posts($page,$count_per_page) {
+      $start = ($page - 1)*$count_per_page;
+      $songs = R::findALL('song','ORDER BY id LIMIT :start,:limit',
+      array(
+        ':start'=>$start,
+        ':limit'=>$count_per_page)
+      );
+      // $songs= R::loadALL('song','ORDER BY id LIMIT ' )
+
+
+      if(!$songs) {
+        exit("<p>В базе данных не обнаружено таблицы проверте настройки</p>");
+      }
+      return $songs;
+    }
+
+    if($_GET['page']) {
+    	$page = (int)$_GET['page'];
+    	if(!$page) {
+    		$page = 1;
+    	}
+    }
+    else {
+    	$page = 1;
+    }
+
+    $songs =  get_posts($page,$COUNT_PER_PAGE);
+
+
+    if($_GET['move'] == 1) {
+      foreach($songs as $song) {
+
+        echo "<li class='list-group-item'>
+          <div class='for_text d-flex'>
+
+          <div class='button-play' style='position:relative'>
+            <button class='btn btn-active spec-btn-play'>
+              <img class='spec-btn-imgCtrl' src='".$song['img_path']."' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+          <div class='flex-grow-1 bd-highlight'>
+            <div class=''>";
+              if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'));
+          echo "</div>
+
+            <div class=''>
+              ".$song['artist']."
+            </div>
+          </div>
+
+          <div class='pt-3'>
+            <div class=''>";
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+            echo "</div>
+          </div>
+
+          <div class='button-play' style='position:relative'>
+            <button class='btn btn-active spec-btn-play'>
+              <img class='spec-btn-imgCtrl' src='".$song['img_path']."' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+
+
+          </div>
+        </li>";
+
+    	}
+    	exit();
+    }
+ ?>
+
+  <div id="posts">
+    <ul class="list-group list-group-flush ">
+    <? foreach($songs as $key => $song) :?>
+    <? //for($i=0; $i<10; $i++) :?>
+    <!-- Вывод музыки -->
+      <li class="list-group-item">
+        <div class="for_text d-flex">
+          <div class="button-play " style="position:relative">
+            <button class="btn btn-active spec-btn-play">
+              <img class="spec-btn-imgCtrl" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+          <div class=" flex-grow-1 bd-highlight">
+            <div class="">
+              <? if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'))?>
+            </div>
+
+            <div class="">
+              <?=$song['artist']?>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="">
+                <?php
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+                ?>
+            </div>
+          </div>
+
+        </div>
+      </li>
+    <? endforeach; ?>
+    <script type="text/javascript">
+    Array.from(document.getElementsByClassName('spec-btn-imgCtrl')).forEach(function(element){
+    element.onfocus=element.onmouseover=function(){
+    console.log(this.outerHTML);
+    this.outerHTML='<img class="spec-btn-play" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img class="spec-btn-imgCtrl" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+    console.log(this.outerHTML);
+    }
+    // element.onblur=element.onmouseout=function(){
+    //   this.outerHTML="<img class='spec-btn-imgCtrl' src='<?php //echo $song['img_path']?>' width='40' height='40 ' alt=''>";
+    // }
+    // element.onclick=function(){
+    //   console.log(this);
+    //   console.log(document.querySelector('audio').currentTime>0);
+    //   console.log(!document.querySelector('audio').paused);
+    //   console.log(!document.querySelector('audio').ended);
+    //   if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+    //     document.getElementById('bjs').pause();
+    //   }
+    //   else {
+    //     document.getElementById('bjs').play();
+    //   }
+    // }
+    element.onmouseup=function(){
+    console.log(this);
+    console.log('test');
+    console.log('it is up');
+    }
+    })
+    Array.from(document.getElementsByClassName('spec-btn-play')).forEach(function(element){
+    // element.onfocus=element.onmouseover=function(){
+    //   console.log(this.outerHTML);
+    //   this.outerHTML='<img onClick="document.getElementById(\'bjs\').play()" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img  onClick="document.getElementById(\'bjs\').play()" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+    //   console.log(this.outerHTML);
+    // }
+    element.onblur=element.onmouseout=function(){
+    // this.parentNode.removeChild(this);
+    // this.outerHTML="<img class='spec-btn-imgCtrl' src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>";
+    console.log('testOnBlur');
+    }
+    element.onclick = function(){
+    console.log(this);
+    console.log(document.querySelector('audio').currentTime);
+    console.log(document.querySelector('audio').paused);
+    console.log(document.querySelector('audio').ended);
+    if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+    document.querySelector('audio').pause()
+    }
+    else {
+    document.querySelector('audio').play();
+    }
+    }
+    })
+    </script>
+      <div class="laod"></div>
+      <div class="pager"> </div>
+  </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </body>
+
+-------------------------------------------------------------------------------------------------
+<?php
+  set_include_path('W:/domains/localhost/');
+  require_once "Music.com/php/config.php";
+  require_once "Music.com/php/my_music/mp3Class/mp3file.Class.php";
+?>
+<head>
+  <?php include_once('Music.com/php/head.php'); ?>
+  <script type="text/javascript" src="script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="script/scriptTrack.js"></script>
+</head>
+
+
+<body>
+  <audio id="bjs" src="http://online.radiorecord.ru:8102/tm_128" preload="auto"></audio>
+
+  <div class="text-center">
+
+    <button onClick="document.getElementById('bjs').play()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-play.svg"></button>
+    <button onClick="document.getElementById('bjs').pause()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-pause.svg"></button>
+    <button onClick="document.getElementById('bjs').volume += 0.1" class="btn btn-active" ></button>
+    <button onClick="document.getElementById('bjs').volume -= 0.1" class="btn btn-active" ></button>
+
+  </div>
+  <?php
+    function get_posts($page,$count_per_page) {
+      $start = ($page - 1)*$count_per_page;
+      $songs = R::findALL('song','ORDER BY id LIMIT :start,:limit',
+      array(
+        ':start'=>$start,
+        ':limit'=>$count_per_page)
+      );
+      // $songs= R::loadALL('song','ORDER BY id LIMIT ' )
+
+
+      if(!$songs) {
+        exit("<p>В базе данных не обнаружено таблицы проверте настройки</p>");
+      }
+      return $songs;
+    }
+
+    if($_GET['page']) {
+    	$page = (int)$_GET['page'];
+    	if(!$page) {
+    		$page = 1;
+    	}
+    }
+    else {
+    	$page = 1;
+    }
+
+    $songs =  get_posts($page,$COUNT_PER_PAGE);
+
+
+    if($_GET['move'] == 1) {
+      foreach($songs as $song) {
+
+        echo "<li class='list-group-item'>
+          <div class='for_text d-flex'>
+
+          <div class='button-play' style='position:relative'>
+            <button class='btn btn-active spec-btn-play'>
+              <img class='spec-btn-imgCtrl' src='".$song['img_path']."' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+          <div class='flex-grow-1 bd-highlight'>
+            <div class=''>";
+              if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'));
+          echo "</div>
+
+            <div class=''>
+              ".$song['artist']."
+            </div>
+          </div>
+
+          <div class='pt-3'>
+            <div class=''>";
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+            echo "</div>
+          </div>
+
+          <div class='button-play' style='position:relative'>
+            <button class='btn btn-active spec-btn-play'>
+              <img class='spec-btn-imgCtrl' src='".$song['img_path']."' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+
+
+
+          </div>
+        </li>";
+
+    	}
+    	exit();
+    }
+ ?>
+
+  <div id="posts">
+    <ul class="list-group list-group-flush ">
+    <? foreach($songs as $key => $song) :?>
+    <? //for($i=0; $i<10; $i++) :?>
+    <!-- Вывод музыки -->
+      <li class="list-group-item">
+        <div class="for_text d-flex">
+          <div class="button-play " style="position:relative">
+            <button class="btn btn-active spec-btn-play">
+              <img class="spec-btn-imgCtrl" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+          <div class=" flex-grow-1 bd-highlight">
+            <div class="">
+              <? if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'))?>
+            </div>
+
+            <div class="">
+              <?=$song['artist']?>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="">
+                <?php
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+                ?>
+            </div>
+          </div>
+
+        </div>
+      </li>
+    <? endforeach; ?>
+    <script type="text/javascript">
+    Array.from(document.getElementsByClassName('spec-btn-imgCtrl')).forEach(function(element){
+      element.onfocus=element.onmouseover=function(){
+        console.log(this.outerHTML);
+        this.outerHTML='<img class="spec-btn-play" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img class="spec-btn-imgCtrl" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+        console.log(this.outerHTML);
+      }
+      element.onblur=element.onmouseout=function(){
+        this.outerHTML="<img class='spec-btn-imgCtrl' src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>";
+      }
+      // element.onclick=function(){
+      //   console.log(this);
+      //   console.log(document.querySelector('audio').currentTime>0);
+      //   console.log(!document.querySelector('audio').paused);
+      //   console.log(!document.querySelector('audio').ended);
+      //   if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+      //     document.getElementById('bjs').pause();
+      //   }
+      //   else {
+      //     document.getElementById('bjs').play();
+      //   }
+      // }
+      element.onmouseup=function(){
+        console.log(this);
+        console.log('test');
+        console.log('it is up');
+      }
+    })
+    Array.from(document.getElementsByClassName('spec-btn-play')).forEach(function(element){
+      // element.onfocus=element.onmouseover=function(){
+      //   console.log(this.outerHTML);
+      //   this.outerHTML='<img onClick="document.getElementById(\'bjs\').play()" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img  onClick="document.getElementById(\'bjs\').play()" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+      //   console.log(this.outerHTML);
+      // }
+      element.onblur=element.onmouseout=function(){
+        // this.parentNode.removeChild(this);
+        console.log('testOnBlur');
+      }
+      element.onclick = function(){
+        console.log(this);
+        console.log(document.querySelector('audio').currentTime);
+        console.log(document.querySelector('audio').paused);
+        console.log(document.querySelector('audio').ended);
+        if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+          document.querySelector('audio').pause()
+        }
+        else {
+          document.querySelector('audio').play();
+        }
+      }
+    })
+  </script>
+      <div class="laod"></div>
+      <div class="pager"> </div>
+  </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </body>
+
+-------------------------------------------------------------------------------------------------
+<?php
+  set_include_path('W:/domains/localhost/');
+  require_once "Music.com/php/config.php";
+  require_once "Music.com/php/my_music/mp3Class/mp3file.Class.php";
+?>
+<head>
+  <?php include_once('Music.com/php/head.php'); ?>
+  <script type="text/javascript" src="script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="script/scriptTrack.js"></script>
+</head>
+
+
+<body>
+  <audio id="bjs" src="http://online.radiorecord.ru:8102/tm_128" preload="auto"></audio>
+
+  <div class="text-center">
+
+    <button onClick="document.getElementById('bjs').play()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-play.svg"></button>
+    <button onClick="document.getElementById('bjs').pause()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-pause.svg"></button>
+    <button onClick="document.getElementById('bjs').volume += 0.1" class="btn btn-active" ></button>
+    <button onClick="document.getElementById('bjs').volume -= 0.1" class="btn btn-active" ></button>
+
+  </div>
+  <?php
+    function get_posts($page,$count_per_page) {
+      $start = ($page - 1)*$count_per_page;
+      $songs = R::findALL('song','ORDER BY id LIMIT :start,:limit',
+      array(
+        ':start'=>$start,
+        ':limit'=>$count_per_page)
+      );
+      // $songs= R::loadALL('song','ORDER BY id LIMIT ' )
+
+
+      if(!$songs) {
+        exit("<p>В базе данных не обнаружено таблицы проверте настройки</p>");
+      }
+      return $songs;
+    }
+
+    if($_GET['page']) {
+    	$page = (int)$_GET['page'];
+    	if(!$page) {
+    		$page = 1;
+    	}
+    }
+    else {
+    	$page = 1;
+    }
+
+    $songs =  get_posts($page,$COUNT_PER_PAGE);
+
+
+    if($_GET['move'] == 1) {
+      foreach($songs as $song) {
+
+        echo "<li class='list-group-item'>
+          <div class='for_text d-flex'>
+          <svg viewBox='0 0 8 8'><use xlink:href='#media-play'></use></svg>
+            <img src='".$song['img_path']."' width='40' height='40 ' alt=''>
+            <div class='flex-grow-1 bd-highlight'>
+              <div class=''>";
+                if($song['name']!='') printf($song['name']);
+                else printf(basename($song['path'],'.mp3'));
+        echo "</div>
+
+              <div class=''>".$song['artist']."
+              </div>
+            </div>
+
+            <div class='align-center'>
+              <div class=''>";
+                    $mp3file = new MP3File($song['path']);
+                    $duration = $mp3file->getDuration();
+                    echo MP3File::formatTime($duration)."\n";
+              echo "</div>
+            </div>
+
+          </div>
+        </li>";
+
+    	}
+    	exit();
+    }
+ ?>
+
+  <div id="posts">
+    <ul class="list-group list-group-flush ">
+    <? foreach($songs as $key => $song) :?>
+    <? //for($i=0; $i<10; $i++) :?>
+    <!-- Вывод музыки -->
+      <li class="list-group-item">
+        <div class="for_text d-flex">
+          <div class="button-play " style="position:relative">
+            <button class="btn btn-active spec-btn-play">
+              <img class="spec-btn-imgCtrl" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+          <script type="text/javascript">
+          Array.from(document.getElementsByClassName('spec-btn-imgCtrl')).forEach(function(element){
+              element.onfocus=element.onmouseover=function(){
+                console.log(this.outerHTML);
+                this.outerHTML='<img class="spec-btn-play" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img class="spec-btn-imgCtrl" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+                console.log(this.outerHTML);
+              }
+              element.onblur=element.onmouseout=function(){
+                this.outerHTML="<img class='spec-btn-imgCtrl' src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>";
+              }
+              // element.onclick=function(){
+              //   console.log(this);
+              //   console.log(document.querySelector('audio').currentTime>0);
+              //   console.log(!document.querySelector('audio').paused);
+              //   console.log(!document.querySelector('audio').ended);
+              //   if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+              //     document.getElementById('bjs').pause();
+              //   }
+              //   else {
+              //     document.getElementById('bjs').play();
+              //   }
+              // }
+              element.onmouseup=function(){
+                console.log(this);
+                console.log('test');
+                console.log('it is up');
+              }
+          })
+            Array.from(document.getElementsByClassName('spec-btn-play')).forEach(function(element){
+              // element.onfocus=element.onmouseover=function(){
+              //   console.log(this.outerHTML);
+              //   this.outerHTML='<img onClick="document.getElementById(\'bjs\').play()" style="margin:7% 12%;position:absolute" width=30 height=30 src="open-iconic-master/svg/media-play.svg"><img  onClick="document.getElementById(\'bjs\').play()" src="<?php echo $song['img_path']?>" width="40" height="40" alt="">';
+              //   console.log(this.outerHTML);
+              // }
+              element.onblur=element.onmouseout=function(){
+                // this.parentNode.removeChild(this);
+                console.log('testOnBlur');
+              }
+              element.onclick = function(){
+                console.log(this);
+                console.log(document.querySelector('audio').currentTime);
+                console.log(document.querySelector('audio').paused);
+                console.log(document.querySelector('audio').ended);
+                if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+                  document.querySelector('audio').pause()
+                }
+                else {
+                  document.querySelector('audio').play();
+                }
+              }
+          })
+          </script>
+          <div class=" flex-grow-1 bd-highlight">
+            <div class="">
+              <? if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'))?>
+            </div>
+
+            <div class="">
+              <?=$song['artist']?>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="">
+                <?php
+                  $mp3file = new MP3File($song['path']);
+                  $duration = $mp3file->getDuration();
+                  echo MP3File::formatTime($duration)."\n";
+                ?>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+
+    <? endforeach; ?>
+      <div class="laod"></div>
+      <div class="pager"> </div>
+  </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </body>
+
+-------------------------------------------------------------------------------------------------
+
+            $remotefilename = $uploadfile;
+            if ($fp_remote = fopen($remotefilename, 'rb')) {
+                $localtempfilename = tempnam('/tmp', 'getID3');
+                if ($fp_local = fopen($localtempfilename, 'wb')) {
+                    while ($buffer = fread($fp_remote, 8192)) {
+                        fwrite($fp_local, $buffer);
+                    }
+                    fclose($fp_local);
+                    // Initialize getID3 engine
+                    $getID3 = new getID3;
+                    $ThisFileInfo = $getID3->analyze($localtempfilename);
+                    // Delete temporary file
+                    unlink($localtempfilename);
+                }
+                fclose($fp_remote);
+            }
+
+            echo $ThisFileInfo['tags']['id3v2']['artist'][0].':_______artist</br>'; // artist from any/all available tag formats
+            echo $ThisFileInfo['tags']['id3v2']['title'][0].':_______title</br>';  // title from ID3v2
+            echo $ThisFileInfo['audio']['bitrate'].':_______audio bitrate</br>';           // audio bitrate
+            echo $ThisFileInfo['playtime_string'].':_______playtime in minutes</br>';            // playtime in minutes:seconds, formatted string
+            echo $ThisFileInfo['id3v1']['album'].':_______album</br>';
+            echo $ThisFileInfo['id3v1']['artist'].':_______artist</br>';
+            echo $ThisFileInfo['id3v1']['comment'].':_______comment</br>';
+            echo $ThisFileInfo['id3v1']['comments']['album'][0].':_______album</br>';
+            echo $ThisFileInfo['id3v1']['comments']['artist'][0].':_______artist</br>';
+            echo $ThisFileInfo['id3v1']['comments']['comment'][0].':_______comment</br>';
+            echo $ThisFileInfo['id3v1']['comments']['genre'][0].':_______genre</br>';
+            echo $ThisFileInfo['id3v1']['comments']['title'][0].':_______title</br>';
+            echo $ThisFileInfo['id3v1']['comments']['year'][0].':_______year</br>';
+            echo $ThisFileInfo['id3v1']['encoding'].':_______encoding</br>';
+            echo $ThisFileInfo['id3v1']['genre'].':_______genre</br>';
+            echo $ThisFileInfo['id3v1']['padding_valid'].':_______padding_valid</br>';
+            echo $ThisFileInfo['id3v1']['tag_offset_end'].':_______tag_offset_end</br>';
+            echo $ThisFileInfo['id3v1']['tag_offset_start'].':_______tag_offset_start</br>';
+            echo $ThisFileInfo['id3v1']['title'].':_______title</br>';
+            echo $ThisFileInfo['id3v1']['year'].':_______year</br>';
+            echo $ThisFileInfo['id3v2']['TCON'][0]['data'].':_______data</br>';
+            echo $ThisFileInfo['id3v2']['TCON'][0]['framenameshort'].':_______framenameshort</br>';
+            echo $ThisFileInfo['id3v2']['TIT2']['data'].':_______data</br>';
+            echo $ThisFileInfo['id3v2']['TPE1']['data'].':_______</br>';
+            echo $ThisFileInfo['id3v2']['comments']['artist'][0].':_______artist</br>';
+            echo $ThisFileInfo['id3v2']['comments']['genre'][0].':_______genre</br>';
+            echo $ThisFileInfo['id3v2']['comments']['title'][0].':_______title</br>';
+            echo "</br>";
+            echo "<pre>";
+            var_dump($ThisFileInfo);
+            echo "</br>";
+            printf($ThisFileInfo['tags']);
+            echo "</br>";
+            echo "</br>";
+-------------------------------------------------------------------------------------------------
+
+  // $id = new getid3;
+  // $tag='utf-8';
+  // $id->setOption(array('encoding'->$tag));
+  // include('/Music.com/getID3-master/getid3/write.php');
+  // $writer = new getid3_writetags;
+  // $writer->filename = '';
+  // $writer->tagformat = array('id3v1','id3v2.3');
+  // $writer->overwrite_tags = true;
+  // $writer->remove_other_tags = true;
+  // $writer->tag_encoding = $tag;
+  // $tagsong['artist'][]='palito';
+  // $tagsong['artist'][]=
+  // $tagsong['artist'][]=
+  // $tagsong['artist'][]=
+  // $tagsong['artist'][]=
+  // $tagsong['artist'][]=
+
+  // print_r($_FILES['myFile']);
+  // if (isset($_FILES['username'])) {
+  // 	// code...
+  // 	echo "string".$_FILES['username'];
+  // }
+  // print_r($_FILES['myFile']);
+
+  // $getid3 = new getID3();
+  // $getid3->encoding = 'UTF-8'; //указываем output-кодировку
+  // $getID3->option_md5_data        = true;
+  // $getID3->option_md5_data_source = true;
+  // Analyze file and store returned data in $ThisFileInfo
+  // $ThisFileInfo = $getid3->Analyze($filename); //путь до файла
+  // echo "</br>";
+  // var_dump($getid3); //посмотрим результаты работы
+  // echo "</br>";
+  // getid3_lib::CopyTagsToComments($ThisFileInfo);
+-------------------------------------------------------------------------------------------------
+<!-- <link href="jPlayer-master/dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css" /> -->
+<!-- <script type="text/javascript" src="jPlayer-master/lib/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="jPlayer-master/dist/jplayer/jquery.jplayer.min.js"></script> -->
+
+<!-- <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+  <div class="jp-type-single">
+    <div class="jp-gui jp-interface">
+      <div class="jp-controls">
+        <button class="jp-play" role="button" tabindex="0">play</button>
+        <button class="jp-stop" role="button" tabindex="0">stop</button>
+      </div>
+      <div class="jp-progress">
+        <div class="jp-seek-bar">
+          <div class="jp-play-bar"></div>
+        </div>
+      </div>
+      <div class="jp-volume-controls">
+        <button class="jp-mute" role="button" tabindex="0">mute</button>
+        <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+        <div class="jp-volume-bar">
+          <div class="jp-volume-bar-value"></div>
+        </div>
+      </div>
+      <div class="jp-time-holder">
+        <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+        <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+        <div class="jp-toggles">
+          <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+        </div>
+      </div>
+    </div>
+    <div class="jp-details">
+      <div class="jp-title" aria-label="title">&nbsp;</div>
+    </div>
+    <div class="jp-no-solution">
+      <span>Update Required</span>
+      To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+    </div>
+  </div>
+</div> -->
+
+// //<![CDATA[
+// 	$("#jquery_jplayer_1").jPlayer({
+// 		ready: function (event) {
+// 			$(this).jPlayer("setMedia", {
+// 				title: "Bubble",
+// 				m4a: "http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+// 				oga: "http://jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+// 			});
+// 		},
+// 		swfPath: "jPlayer-master/dist/jplayer",
+// 		supplied: "m4a, oga",
+// 		wmode: "window",
+// 		useStateClassSkin: true,
+// 		autoBlur: false,
+// 		smoothPlayBar: true,
+// 		keyEnabled: true,
+// 		remainingDuration: true,
+// 		toggleDuration: true
+// 	});
+// //]]>
+-------------------------------------------------------------------------------------------------
+<?php
+  set_include_path('W:/domains/localhost/');
+  include 'track-list.php';
+  require_once "Music.com/php/config.php";
+  require_once "mp3Class/mp3file.Class.php";
+  require "Music.com/getID3-master/getid3/getid3.php";
+
+if($_GET['page']) {
+  $page = (int)$_GET['page'];
+  if(!$page) {
+    $page = 1;
+  }
+}
+else {
+  $page = 1;
+}
+
+$songs =  get_posts($page,$COUNT_PER_PAGE);
+
+
+
+if($_GET['move'] == 1) {
+  foreach($songs as $song) {
+    $path="music/".basename($song['path']);
+    echo "<li class='list-group-item'>
+      <div class='for_text d-flex'>
+      <button class='btn btn-active spec-btn-play'>
+        <img data-src=\"".$path."\" class='spec-btn-imgCtrl' src='".$song['img_path']."' width='40' height='40 ' alt=''>
+      </button>
+        <div class='flex-grow-1 bd-highlight'>
+          <div class=''>";
+            if($song['name']!='') printf($song['name']);
+            else printf(basename($song['path'],'.mp3'));
+    echo "</div>
+
+          <div class=''>".$song['artist']."
+          </div>
+        </div>
+
+        <div class='align-center'>
+          <div class=''>";
+                $mp3file = new MP3File($song['path']);
+                $duration = $mp3file->getDuration();
+                echo MP3File::formatTime($duration)."\n";
+          echo "</div>
+        </div>
+
+      </div>
+    </li>";
+    echo "<script type='text/javascript' src='addliEl.js'></script>";
+
+  }
+  exit();
+}
+?>
+<head>
+  <?php include_once('Music.com/php/head.php'); ?>
+  <script type="text/javascript" src="script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="script/scriptTrack.js"></script>
+</head>
+
+
+<body>
+
+  <div class="text-center">
+
+    <audio controls id="bjs" src="http://online.radiorecord.ru:8102/tm_128" preload="auto"></audio>
+    <div class="">
+      <button onClick="document.getElementById('bjs').play()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-play.svg"></button>
+      <button onClick="document.getElementById('bjs').pause()" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/media-pause.svg"></button>
+      <button onClick="document.getElementById('bjs').volume += 0.1" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/plus.svg"></button>
+      <button onClick="document.getElementById('bjs').volume -= 0.1" class="btn btn-active" ><img width=25 height=25 src="open-iconic-master/svg/minus.svg"></button>
+    </div>
+
+
+    	<!-- <div class="js--timeline">
+    		<a href="#" class="js--timeline-control"></a>
+    	</div>
+    	<a href="#" class="js--audio-mute">
+    		<span class="glyphicon glyphicon-volume-up" data-toggle-class="glyphicon glyphicon-volume-off"></span>
+    	</a> -->
+  <script type="text/javascript">
+    (function($) {
+      $(document).ready(function() {
+        /**
+         * Перемотка трека по клику на timeline
+         */
+        $('.js--timeline').on('click', function (e) {
+          audioTime = $(this).closest('.js--audio-wrap').find('.js--audio-cont');
+          duration = audioTime.prop('duration');
+          if (duration > 0) {
+            offset = $(this).offset();
+            left = e.clientX-offset.left;
+            width = $(this).width();
+            $(this).find('.js--timeline-control').css('left', left+'px');
+            audioTime.prop('currentTime', duration*left/width);
+          }
+          return false;
+        });
+      });
+    });
+  </script>
+
+  </div>
+
+  <ul id="posts" class="list-group list-group-flush ">
+    <? foreach($songs as $key => $song) :?>
+    <!-- Вывод музыки -->
+      <li class="list-group-item">
+        <div class="for_text d-flex">
+          <div class="button-play " style="position:relative">
+            <button class="btn btn-active spec-btn-play" >
+              <img class="spec-btn-imgCtrl" data-src="<?php echo 'music/'.basename($song['path'])?>" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
+            </button>
+          </div>
+          <div class=" flex-grow-1 bd-highlight">
+            <div class="">
+              <? if($song['name']!='') printf($song['name']);
+              else printf(basename($song['path'],'.mp3'))?>
+            </div>
+
+            <div class="">
+              <?=$song['artist']?>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="">
+                <?php echo $song["duration"];
+                ?>
+            </div>
+          </div>
+
+        </div>
+      </li>
+      <? endforeach; ?>
+  </ul>
+
+  <script type="text/javascript">
+  Array.from(document.getElementsByClassName('spec-btn-imgCtrl')).forEach(function(element){
+    element.onfocus=element.onmouseover=function(){
+      //code..
+    }
+    element.onblur=element.onmouseout=function(){
+      //code..
+    }
+    element.onmouseup=function(){
+      //code...
+    }
+    element.onclick = function(){
+      console.log(this);
+      console.log(document.querySelector('audio').currentTime);
+      console.log(document.querySelector('audio').paused);
+      console.log(document.querySelector('audio').ended);
+      console.log(this.parentNode);
+
+
+
+      var src =$(this).data('src');
+      console.log(src);
+      console.log(document.getElementById('bjs').src);
+      console.log();
+
+      if(document.querySelector('audio').src!="<?php echo rel2abs(src,"http://localhost/music.com/")?>"){
+        $('#bjs').attr('src', src);
+        console.log('src!=src');
+      }
+
+      if(document.querySelector('audio').currentTime>0 && !document.querySelector('audio').paused && !document.querySelector('audio').ended){
+        document.querySelector('audio').pause();
+      }
+      else {
+        document.querySelector('audio').play();
+      }
+    }
+  })
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </body>
+
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
