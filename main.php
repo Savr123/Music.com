@@ -16,9 +16,9 @@
 
   		<!---Main---------------------------------------------------------------->
   		<main>
-  			<div class="container container-fluid p-1 m-1">
-          <div class="container p-1 text-center">
-            <?php include_once('Music.com/Audio/php/mainPage.php') ?>
+  			<div class="">
+          <div class="p-1 text-center">
+            <?php include_once('Music.com/Audio/mainPage.php') ?>
   			  </div>
         </div>
   		</main>

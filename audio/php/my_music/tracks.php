@@ -31,7 +31,7 @@ if($_GET['move'] == 1) {
             else printf(basename($song['path'],'.mp3'));
     echo "</div>
 
-          <div class=''>".$song['artist']."
+          <div class=''>".$song['artist']['name']."
           </div>
         </div>
 
@@ -87,7 +87,7 @@ if($_GET['move'] == 1) {
             </div>
 
             <div class="">
-              <?=$song['artist']?>
+              <?=echo $song['artist']['name']?>
             </div>
           </div>
 

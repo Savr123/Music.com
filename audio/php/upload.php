@@ -21,7 +21,7 @@
   	<form enctype="multipart/form-data" method="post" action="upload.php">
       <div class="form-group">
         <label for="upload_file[]">Загрузить трек</label>
-        <input type="file" class="form-control-file" id="upload_file" name="upload_file[]" multiple accept=".mp3, .mp4">
+        <input type="file" class="form-control-file" id="upload_file" name="upload_file[]" multiple accept=".mp3">
       </div>
 			<?php
 			$data=$_POST;
@@ -52,10 +52,8 @@
                   $count_success++;
 
                   $trackInfo=get_id3($uploadfile);
-
   								$track = new CMP3File;
   								$track->getid3($uploadfile);
-  								// print_r($track);
                   if($trackInfo["id3v2"]["comments"]["title"][0]==NULL){
                     $track->name=basename($_FILES['upload_file']['name'][$i],'.mp3');
                   }
@@ -72,9 +70,7 @@
                     else{
                       $song->datecreation =$trackInfo["id3v2"]["comments"]["year"][0];   // дата выпуска
                     }
-                    // if ($trackInfo["id3v2"]["comments"]["title"][0]=='' || $trackInfo["id3v2"]["comments"]["title"][0]==NULL)
-                    $song->name=$track->name;
-                    // $song->name=$trackInfo["id3v2"]["comments"]["title"][0];                 		// название трека
+                    $song->name=$track->name;            		// название трека
   									$song->description =$track->comment;     // описание трека
   									$song->artist = $trackInfo["id3v2"]["comments"]['artist'][0];              // исполнитель
   									$song->auditions = 0;	// колличество прослушиваний
@@ -98,28 +94,67 @@
                     $song->language_name = $trackInfo["id3v2"]["COMM"][0]['languagename'];                 	// комментарий
                     $song->lang = $trackInfo["id3v2"]["COMM"][0]['language'];
                     $song->duration = $trackInfo["playtime_string"];                	// комментарий
+                    $song->loader=$_SESSION['logged_user']->id;
 
-                    // $song->tags = $data['tags'];                 	// теги
-                    // $song->nominations = $data ['nominations'];		// номинации
-  									// $song->text = $data['text'];                  // слова песни
-  									// $song->authorm =$data['authorm'];             // автор музыки
-  									// $song->authorw =$data['authorw'];             // автор слов
-                    // $song->id_genre=$data['id_genre'];        		// id жанра
-                    // $song->id_album=$data['id_album'];        		// id альбома
-  									// $song->duration =$data['duration'];           // длительность трека
-                    // $song->id_artist=$data['id_artist'];      		// id исполнителя
-  								R::store($song);
+                    // genre input
+                    if($song->genre!=NULL){
+                      $genre=R::findOrCreate('genre',[
+                        'name' => $song->genre
+                      ]);
+                    }else {
+                      $genre=R::findOrCreate('genre',[
+                        'name' => 'нет жанра'
+                      ]);
+                    }
+                    //genre binding
+                    //----------------------------------------------------------
+                    $song->genre = R::load('genre',$genre->id);
+                    // artist input
+                    if($song->artist!=NULL){
+                      $artist=R::findOrCreate('artist',[
+                        'name' => $song->artist
+                      ]);
+                    }else {
+                      $artist=R::findOrCreate('artist',[
+                        'name' => 'нет исполнителя'
+                      ]);
+                    }
+
+                    //----------------------------------------------------------
+                    // album input
+                    if($song->album!=NULL){
+                      $album=R::findOrCreate('album',[
+                        'name' => $song->album
+                      ]);
+                    }else {
+                      $album=R::findOrCreate('album',[
+                        'name' => 'нет альбома'
+                      ]);
+                    }
+
+
+                    if($album->performers==NULL) $album->performers = $song->artist;
+                    if($album->path_to_img==NULL) $album->path_to_img = $song->img_path;
+                    if($album->genre==NULL) $album->genre=$trackInfo["id3v2"]["comments"]["genre"][0];
+                    $album->artist=$artist;
+                    $album->genre=$genre;
+                    R::store($album);
+
+                    $artist->ownAlbumList[]=$album;
+                    $song->album = R::load('album',$album->id);
+                    //----------------------------------------------------------
+                    //aritst binding
+                    $song->artist = R::load('artist',$artist->id);
+  								$id=R::store($song);
   								unset($data['do_upload'] );
   						} else {
   								echo "Возможная атака с помощью файловой загрузки!\n";
   						}
+
   					}else {
   						// echo "этот трек уже есть в базе";
               $count++;
   					}
-
-  					// echo 'Некоторая отладочная информация:';
-  					// print_r($_FILES);
   				}
           echo $count_success." файлов было загружено\n".$count." файлов уже существует</pre>";
         }

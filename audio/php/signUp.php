@@ -60,6 +60,15 @@
       $user->email = $data['email'];
       $user->name = $data['name'];
       $user->phone = $data['phone'];
+      $uploaddir = 'W:/domains/localhost/Music.com/images/';
+      @mkdir($uploaddir.$user->name."/".  $uploaddir, 0700,true);
+      $uploadfile = $uploaddir .$user->name."/images.png";
+      $user->img_path = $uploadfile;
+      if (copy("W:/domains/localhost/Music.com/images/common/images.png",$uploadfile)){
+        $user->img_path = $uploadfile;
+      }else {
+        echo "Возможная атака с помощью файловой загрузки!\n";
+      }
       $user->password = password_hash($data['password'],PASSWORD_DEFAULT);
       $id=R::store($user);
 
@@ -67,6 +76,13 @@
     }else {
       echo '<div class="alert alert-danger">'.array_shift($errors)."</div>";
     }
+
+
+
+
+    // $result = R::getALL("SELECT * FROM `users` ORDER BY `id`");
+    // print_r($result);
+    // echo '<div class="alert alert-danger">'.."</div>";
 }
 
 if( isset($data['login_link']) ){

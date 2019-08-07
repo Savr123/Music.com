@@ -1,18 +1,64 @@
 <?php
   require_once "Music.com/Audio/php/config.php";
-  function get_posts($page,$count_per_page) {
-
+  function get_posts($page,$count_per_page,$filter=0) {
     $start = ($page - 1)*$count_per_page;
-    $songs = R::findALL('song','ORDER BY id LIMIT :start,:limit',
-    array(
-      ':start'=>$start,
-      ':limit'=>$count_per_page)
-    );
-    // $songs= R::loadALL('song','ORDER BY id LIMIT ' )
+    switch ($_GET['filter']) {
+      case 1:
+        // code... uploaded by user tracks
+        $songs = R::find('song','WHERE loader = :user ORDER BY id LIMIT :start,:limit',
+        array(
+          ':start'=>$start,
+          ':limit'=>$count_per_page,
+          ':user' =>$_SESSION['logged_user']->id)
+        );
+        break;
+      case 2:
+        // code... alboms tracks
+        $songs = R::find('song','WHERE album_id = :album ORDER BY id LIMIT :start,:limit',
+        array(
+          ':start'=>$start,
+          ':limit'=>$count_per_page,
+          ':album'=>$_GET['album'])
+        );
+        break;
+      case 3:
+        // code... artists tracks
+        $songs = R::find('song','WHERE artist_id = :artist ORDER BY id LIMIT :start,:limit',
+        array(
+          ':start'=>$start,
+          ':limit'=>$count_per_page,
+          'artist'=>$_GET['artists'])
+        );
+        break;
+      case 4:
+        // code... playList
+        $songs = R::find('song','ORDER BY id LIMIT :start,:limit',
+        array(
+          ':start'=>$start,
+          ':limit'=>$count_per_page)
+        );
+        break;
+      case 5:
+        // code... History
+        $songs = R::find('song','ORDER BY id LIMIT :start,:limit',
+        array(
+          ':start'=>$start,
+          ':limit'=>$count_per_page)
+        );
+        break;
 
+      case 0:
+        // code...
+        $songs = R::find('song','ORDER BY id LIMIT :start,:limit',
+        array(
+          ':start'=>$start,
+          ':limit'=>$count_per_page)
+        );
+        break;
+    }
 
     if(!$songs) {
-      exit("<p>В базе данных не обнаружено таблицы проверте настройки</p>");
+      exit();
     }
     return $songs;
   }

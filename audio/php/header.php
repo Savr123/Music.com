@@ -15,7 +15,7 @@ require_once "W:/domains/localhost/Music.com/Audio/php/config.php"; ?>
     <div class="collapse navbar-collapse ml-1" id="navbarColor02">
       <ul class="navbar-nav ml-auto mr-auto">
         <li class="nav-item active">
-          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="/Music.com/main.php">Главное <span class="sr-only">(current)</span></a>
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="/Music.com/main.php">Главная <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/Audio/php/" href="#">Рекомендации</a>
@@ -43,12 +43,14 @@ require_once "W:/domains/localhost/Music.com/Audio/php/config.php"; ?>
             Моя Музыка
           </a></span>
           <!-- профиль -->
-          <a  class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+          <a  class="spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-image:url()">
+            <img class="img-thumbnail rounded-circle border" width="200" height="200" src="<?php echo '/Music.com/images/'.$_SESSION['logged_user']->name.'/'.basename($_SESSION['logged_user']['img_path']) ?>" alt="Нет картинки">
+          </a>
           <?php include_once('W:/domains/localhost/Music.com/Audio/php/personFrame.php') ?>
         </div>
       <?php else : ?>
         <!-- Кнопка: Войти -->
-        <button id="login" onclick='location.href="audio/php/login.php"' type="button" name="login" class="btn spec-btn-log">Войти</button>
+        <button id="login" onclick='location.href="/Music.com/audio/php/login.php"' type="button" name="login" class="btn spec-btn-log">Войти</button>
       <?php endif; ?>
     </div>
   </nav>

@@ -1,9 +1,9 @@
 <?php
   require_once "W:/domains/localhost/Music.com/audio/php/RedBeansPHP/rb.php";
   set_include_path('W:/domains/localhost/');
-  include 'track-list.php';
+  include 'Music.com/audio/track-list.php';
   // require_once "Music.com/Audio/php/config.php";
-  require_once "mp3Class/mp3file.Class.php";
+  require_once "Music.com/audio/mp3Class/mp3file.Class.php";
   require "Music.com/getID3-master/getid3/getid3.php";
 
   $COUNT_PER_PAGE=10;
@@ -17,13 +17,12 @@ else {
   $page = 1;
 }
 
-$songs =  get_posts($page,$COUNT_PER_PAGE);
-
+$songs =  get_posts($page,$COUNT_PER_PAGE,$filter);
 
 
 if($_GET['move'] == 1) {
   foreach($songs as $song) {
-    $path="./music/".basename($song['path']);
+    $path="/Music.com/audio/music/".basename($song['path']);
     echo "<li class='list-group-item'>
       <div class='for_text d-flex'>
       <button class='btn btn-active spec-btn-play'>
@@ -35,21 +34,18 @@ if($_GET['move'] == 1) {
             else printf(basename($song['path'],'.mp3'));
     echo "</div>
 
-          <div class=''>".$song['artist']."
+          <div class=''>".$song['artist']['name']."
           </div>
         </div>
 
         <div class='align-center'>
-          <div class=''>";
-                $mp3file = new MP3File($song['path']);
-                $duration = $mp3file->getDuration();
-                echo MP3File::formatTime($duration)."\n";
+          <div class=''>".$song["duration"]."\n";
           echo "</div>
         </div>
 
       </div>
     </li>";
-    echo "<script type='text/javascript' src='addliEl.js'></script>";
+    echo "<script type='text/javascript' src='/Music.com/audio/addliEl.js'></script>";
 
   }
   exit();
@@ -57,15 +53,15 @@ if($_GET['move'] == 1) {
 ?>
 <head>
   <?php include_once('Music.com/Audio/php/head.php'); ?>
-  <script type="text/javascript" src="script/jquery-3.4.1.js"></script>
-  <script type="text/javascript" src="script/scriptTrack.js"></script>
-  <script type="text/javascript" src="domurl-master/url.min.js"></script>
+  <script type="text/javascript" src="/Music.com/audio/script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="/Music.com/audio/script/scriptTrack.js"></script>
+  <script type="text/javascript" src="/Music.com/audio/domurl-master/url.min.js"></script>
 </head>
 
 
 <body>
 
-  <div class="text-center" style="position:relative">
+  <div class="text-center " style="position:relative;">
 
     <audio style="position:fixed; z-index:1000; left:0;bottom:0; width:100%;" controls id="bjs" src="http://online.radiorecord.ru:8102/tm_128" preload="auto"></audio>
     <!-- <div class="">
@@ -106,14 +102,14 @@ if($_GET['move'] == 1) {
 
   </div>
 
-  <ul id="posts" class="list-group list-group-flush ">
+  <ul id="posts" class="list-group list-group-flush pb-5">
     <? foreach($songs as $key => $song) :?>
     <!-- Вывод музыки -->
       <li class="list-group-item">
         <div class="for_text d-flex">
           <div class="button-play " style="position:relative">
             <button class="btn btn-active spec-btn-play" >
-              <img class="spec-btn-imgCtrl" data-src="<?php echo 'music/'.basename($song['path'])?>" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
+              <img class="spec-btn-imgCtrl" data-src="<?php echo '/Music.com/audio/music/'.basename($song['path'])?>" src='<?php echo $song['img_path']?>' width='40' height='40 ' alt=''>
             </button>
           </div>
           <div class=" flex-grow-1 bd-highlight">
@@ -123,14 +119,13 @@ if($_GET['move'] == 1) {
             </div>
 
             <div class="">
-              <?=$song['artist']?>
+              <?=$song['artist']['name']?>
             </div>
           </div>
 
           <div class="pt-3">
             <div class="">
-                <?php echo $song["duration"];
-                ?>
+                <?php echo $song["duration"];?>
             </div>
           </div>
 

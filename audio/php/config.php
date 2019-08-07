@@ -1,6 +1,6 @@
 <?php
   require_once "RedBeansPHP/rb.php";
-  R::setup('mysql:host=localhost;dbname=library',
+  R::setup('mysql:host=localhost;dbname=music',
         'root', '');
 
 
