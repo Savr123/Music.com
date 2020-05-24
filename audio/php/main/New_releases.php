@@ -5,7 +5,7 @@
 <div class="">
   <div class="spec-card">
     <div class="card p-0">
-      <img src="/Music.com/images/profileImg.jpg" alt="" class="card-img-top" alt="card img alt">
+      <img src="images/profileImg.jpg" alt="" class="card-img-top" alt="card img alt">
       <div class="card-body p-1">
         <div class="card-text">Название</div>
         <div class="text-muted">Исполнитель</div>

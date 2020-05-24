@@ -8,8 +8,8 @@
 <html lang="ru" dir="ltr">
 
 <?php
-  set_include_path('W:/domains/localhost/');
-  include_once('Music.com/Audio/php/head.php'); ?>
+  set_include_path(realpath("../../"));
+  include_once('audio/php/head.php'); ?>
 
   <body>
     <script type="text/javascript">
@@ -60,11 +60,11 @@
       $user->email = $data['email'];
       $user->name = $data['name'];
       $user->phone = $data['phone'];
-      $uploaddir = 'W:/domains/localhost/Music.com/images/';
+      $uploaddir = 'images/';
       @mkdir($uploaddir.$user->name."/".  $uploaddir, 0700,true);
       $uploadfile = $uploaddir .$user->name."/images.png";
       $user->img_path = $uploadfile;
-      if (copy("W:/domains/localhost/Music.com/images/common/images.png",$uploadfile)){
+      if (copy("/images/common/images.png",$uploadfile)){
         $user->img_path = $uploadfile;
       }else {
         echo "Возможная атака с помощью файловой загрузки!\n";
@@ -89,7 +89,7 @@ if( isset($data['login_link']) ){
   // code...
   unset($data);
   echo '<script type="text/javascript">
-  window.location = "/Music.com/Audio/php/login.php";
+  window.location = "audio/php/login.php";
   </script>';
 }
 ?>

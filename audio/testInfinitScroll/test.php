@@ -1,11 +1,11 @@
 <?php
   set_include_path('Z:/home/localhost/www/');
-  require_once "/Music.com/php/config.php";
+  require_once "php/config.php";
 ?>
 <html>
 <head>
   <?php include_once('/Music.com/php/head.php'); ?>
-  <!-- <script src="/Music.com/js/scriptTrack.js" type="text/javascript"></script> -->
+  <!-- <script src="js/scriptTrack.js" type="text/javascript"></script> -->
     <meta charset="UTF-8">
     <title>Бесконечный скролл</title>
     <script type="text/javascript" src="http://ajax.googlesapi.com/ajax/libs/jquery/jquery.min.js"></script>

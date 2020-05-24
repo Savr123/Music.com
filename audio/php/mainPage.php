@@ -17,23 +17,23 @@ window.onload = iframeChange;
   </div>
   <ul class="pagination pagination-lg  loadiframe">
     <li class="page-item">
-      <a class="page-link spec-page-link text-dark" data-src="/Music.com/Audio/php/main/all.php" href="#" tabindex="-1">Всё</a>
+      <a class="page-link spec-page-link text-dark" data-src="audio/php/main/all.php" href="#" tabindex="-1">Всё</a>
     </li>
     <li class="page-item">
-      <a class="page-link spec-page-link text-dark" data-src="/Music.com/Audio/php/main/New_releases.php" href="#">Новые релизы</a>
+      <a class="page-link spec-page-link text-dark" data-src="audio/php/main/New_releases.php" href="#">Новые релизы</a>
     </li>
     <li class="page-item">
-      <a class="page-link spec-page-link text-dark" data-src="/Music.com/Audio/php/main/Chart.php" href="#">Чарт</a>
+      <a class="page-link spec-page-link text-dark" data-src="audio/php/main/Chart.php" href="#">Чарт</a>
     </li>
     <li class="page-item">
-      <a class="page-link spec-page-link text-dark" data-src="/Music.com/Audio/php/main/Not_music.php" href="#">Немузыка</a>
+      <a class="page-link spec-page-link text-dark" data-src="audio/php/main/Not_music.php" href="#">Немузыка</a>
     </li>
     <li class="page-item">
-      <a class="page-link spec-page-link text-dark" data-src="/Music.com/Audio/php/main/Genre.php" href="#">Настроение и жанры</a>
+      <a class="page-link spec-page-link text-dark" data-src="audio/php/main/Genre.php" href="#">Настроение и жанры</a>
     </li>
   </ul>
   <div class="embed-responsive embed-responsive-16by9" style="margin:0 10%;">
-    <iframe class="embed-responsive-item" src="/Music.com/Audio/php/main/all.php" width="100%" height="" id="frame"></iframe>
+    <iframe class="embed-responsive-item" src="audio/php/main/all.php" width="100%" height="" id="frame"></iframe>
   </div>
   <script type="text/javascript">
     $('.loadiframe').on('click', function(){

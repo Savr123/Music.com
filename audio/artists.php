@@ -25,7 +25,7 @@ exit();
   <div class="row pl-4 pt-2">
     <? foreach($artists as $artist) :?>
       <!-- Вывод музыки -->
-      <a class="spec-card text-dark" href="/Music.com/Audio/profile.php?url=track&artists=<?php echo $artist->id ?>&filter=3" >
+      <a class="spec-card text-dark" href="Audio/profile.php?url=track&artists=<?php echo $artist->id ?>&filter=3" >
         <div class="card p-0">
           <img class="img-thumbnail rounded-circle border" width="200" height="200" src="<?php
           if(reset( $artist->ownAlbumList)->path_to_img!=NULL) echo reset( $artist->ownAlbumList)->path_to_img;

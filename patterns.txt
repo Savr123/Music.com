@@ -20,16 +20,16 @@ empty-heart:
     <div class="collapse navbar-collapse ml-1" id="navbarColor02">
       <ul class="navbar-nav ml-auto mr-auto">
         <li class="nav-item active">
-          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="#">Главное <span class="sr-only">(current)</span></a>
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="index.php" href="#">Главное <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Рекомендации</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Жанры</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+          <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Радио</a>
         </li>
       </ul>
     </div>
@@ -39,7 +39,7 @@ empty-heart:
       if (isset($_SESSION['logged_user'])) : ?>
         <div class="spec-dropdown-menu">
           <!-- катаог: Моя музыка -->
-          <span class="spec-nav-link-anim"><a href="" dats-src="/Music.com/php/" id="spec-nav-link-liked" class="nav-link">
+          <span class="spec-nav-link-anim"><a href="" dats-src="php/" id="spec-nav-link-liked" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/>
             </svg>
@@ -118,21 +118,21 @@ empty-heart:
       				<div class="collapse navbar-collapse ml-1" id="navbarColor02">
       					<ul class="navbar-nav ml-auto mr-auto">
       					  <li class="nav-item active">
-      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="#">Главное <span class="sr-only">(current)</span></a>
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="index.php" href="#">Главное <span class="sr-only">(current)</span></a>
       					  </li>
       					  <li class="nav-item">
-      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Рекомендации</a>
       					  </li>
       					  <li class="nav-item">
-      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Жанры</a>
       					  </li>
       					  <li class="nav-item">
-      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+      					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Радио</a>
       					  </li>
       					</ul>
       				</div>
 
-              <div class="collapse navbar-collapse" id="spec-nav-personal" dats-src="/Music.com/php/personFrame.php">
+              <div class="collapse navbar-collapse" id="spec-nav-personal" dats-src="php/personFrame.php">
                 <?php
                 if (isset($_SESSION['logged_user'])) : ?>
                   <div class="spec-dropdown-menu">
@@ -144,7 +144,7 @@ empty-heart:
                       Моя Музыка
                     </a></span>
                     <!-- профиль -->
-                    <a  dats-src="/Music.com/php/personFrame.php" class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+                    <a  dats-src="php/personFrame.php" class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
                     <?php include_once('/Music.com/php/personFrame.php') ?>
                   </div>
                 <?php else : ?>
@@ -155,7 +155,7 @@ empty-heart:
       			</nav>
             <!-- Здесь начинается iframe -->
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="/Music.com/php/mainPage.php" width="100%" height="" id="MainFrame"></iframe>
+              <iframe class="embed-responsive-item" src="php/mainPage.php" width="100%" height="" id="MainFrame"></iframe>
             </div>
             <script type="text/javascript">
               $('.loadMainFrame').on('click', function(){
@@ -213,16 +213,16 @@ empty-heart:
   				<div class="collapse navbar-collapse ml-1" id="navbarColor02">
   					<ul class="navbar-nav ml-auto mr-auto">
   					  <li class="nav-item active">
-  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/main.php" href="#">Главное <span class="sr-only">(current)</span></a>
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="index.php" href="#">Главное <span class="sr-only">(current)</span></a>
   					  </li>
   					  <li class="nav-item">
-  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Рекомендации</a>
   					  </li>
   					  <li class="nav-item">
-  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Жанры</a>
   					  </li>
   					  <li class="nav-item">
-  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+  					    <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Радио</a>
   					  </li>
   					</ul>
   				</div>
@@ -234,7 +234,7 @@ empty-heart:
 
 
                 <!-- катаог: Моя музыка -->
-                <span class="spec-nav-link-anim"><a href="" dats-src="/Music.com/php/" id="spec-nav-link-liked" class="nav-link">
+                <span class="spec-nav-link-anim"><a href="" dats-src="php/" id="spec-nav-link-liked" class="nav-link">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/>
                   </svg>
@@ -326,7 +326,7 @@ empty-heart:
 
           <!-- Здесь начинается навигация -->
           <nav class="navbar navbar-expand-lg spec-navbar mb-5 mr-0 pr-0" >
-            <a class="navbar-brand loadMainFrame" href="#"><span class="logo text-dark" data-src="/Music.com/main.php">MusicPlay</span></a>
+            <a class="navbar-brand loadMainFrame" href="#"><span class="logo text-dark" data-src="index.php">MusicPlay</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -339,21 +339,21 @@ empty-heart:
             <div class="collapse navbar-collapse ml-1" id="navbarColor02">
               <ul class="navbar-nav ml-auto mr-auto loadMainFrame">
                 <li class="nav-item active ">
-                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/mainPage.php" href="#">Главное <span class="sr-only">(current)</span></a>
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/mainPage.php" href="#">Главное <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Рекомендации</a>
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Рекомендации</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Жанры</a>
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Жанры</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="/Music.com/php/" href="#">Радио</a>
+                  <a class="nav-link spec-nav-link spec-nav-link-anim" dats-src="php/" href="#">Радио</a>
                 </li>
               </ul>
             </div>
 
-            <div class="collapse navbar-collapse" id="spec-nav-personal" dats-src="/Music.com/php/personFrame.php">
+            <div class="collapse navbar-collapse" id="spec-nav-personal" dats-src="php/personFrame.php">
               <?php
               if (isset($_SESSION['logged_user'])) : ?>
                 <div class="spec-dropdown-menu">
@@ -365,7 +365,7 @@ empty-heart:
                     Моя Музыка
                   </a></span>
                   <!-- профиль -->
-                  <a  dats-src="/Music.com/php/personFrame.php" class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+                  <a  dats-src="php/personFrame.php" class=" spec-nav-link-profile" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
                   <?php include_once('/Music.com/php/personFrame.php') ?>
                 </div>
               <?php else : ?>
@@ -376,7 +376,7 @@ empty-heart:
           </nav>
           <!-- Здесь начинается iframe -->
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="/Music.com/php/mainPage.php" width="100%" height="" id="MainFrame"></iframe>
+            <iframe class="embed-responsive-item" src="php/mainPage.php" width="100%" height="" id="MainFrame"></iframe>
           </div>
           <script type="text/javascript">
             $('.loadMainFrame').on('click', function(){

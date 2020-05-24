@@ -1,6 +1,6 @@
 <?php
   set_include_path('W:/domains/localhost/');
-  require_once 'Music.com/audio/php/config.php';
+  require_once 'Music.comaudio/php/config.php';
   include_once('Music.com/Audio/php/head.php'); ?>
 
   <nav class="flexy-nav">

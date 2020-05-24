@@ -1,5 +1,6 @@
 <?php
-require('W:/domains/localhost/Music.com/audio/php/config.php');
+  set_include_path("../");
+  require(realpath('audio/php/config.php'));
   // $link = mysqli_connect($host, $user, $password, $database)
   //   or die("Ошибка" . mysqli_error($link));
 
@@ -8,14 +9,12 @@ require('W:/domains/localhost/Music.com/audio/php/config.php');
 <html lang="ru" dir="ltr">
 
 <?php
-  set_include_path('W:/domains/localhost/');
-  include_once('Music.com/Audio/php/head.php');
-  require_once "W:/domains/localhost/Music.com/audio/php/RedBeansPHP/rb.php";
-  set_include_path('W:/domains/localhost/');
-  include 'Music.com/audio/track-list.php';
-  // require_once "Music.com/Audio/php/config.php";
-  require_once "Music.com/audio/mp3Class/mp3file.Class.php";
-  require "Music.com/getID3-master/getid3/getid3.php";
+  include_once(realpath('/audio/php/head.php'));
+  require_once realpath("/audio/php/RedBeansPHP/rb.php");
+  include realpath('/audio/track-list.php');
+  // require_once "Music.comaudio/php/config.php";
+  require_once realpath("/audio/mp3Class/mp3file.Class.php");
+  require realpath("/getID3-master/getid3/getid3.php");
 
   $COUNT_PER_PAGE=10;
 if($_GET['page']) {
@@ -44,7 +43,7 @@ else {
   $tracks=R::find('song', "WHERE name=? ORDER BY id", array('%'.$text.'%'));
   function searchTrack($text){
     foreach($tracks as $track) {
-      $path="/Music.com/audio/music/".basename($track['path']);
+      $path="audio/music/".basename($track['path']);
       echo "<li class='list-group-item'>
         <div class='for_text d-flex'>
         <button class='btn btn-active spec-btn-play'>

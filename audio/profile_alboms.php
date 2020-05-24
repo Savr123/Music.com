@@ -1,6 +1,6 @@
 <?php
   set_include_path('W:/domains/localhost/');
-  require_once "Music.com/Audio/php/config.php";
+  require_once "Music.comaudio/php/config.php";
   include_once('Music.com/audio/php/head.php');
   require_once "W:/domains/localhost/Music.com/audio/php/RedBeansPHP/rb.php";
   set_include_path('W:/domains/localhost/');
@@ -34,7 +34,7 @@ if($_GET['move'] == 1) {
   <div class="row pl-4 pt-2">
     <? foreach($albums as $album) :?>
       <!-- Вывод музыки -->
-      <a class="spec-card text-dark" href="/Music.com/Audio/profile.php?url=track&album=<?php echo $album->id ?>&filter=2" >
+      <a class="spec-card text-dark" href="Audio/profile.php?url=track&album=<?php echo $album->id ?>&filter=2" >
         <div class="card p-0">
           <img src="<?php echo $album->path_to_img;  ?>" alt="" class="card-img-top" alt="card img alt">
           <div class="card-body p-1">

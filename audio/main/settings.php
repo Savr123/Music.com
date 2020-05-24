@@ -1,6 +1,6 @@
 <?php
   set_include_path('W:/domains/localhost/');
-  require_once 'Music.com/audio/php/config.php';
+  require_once 'Music.comaudio/php/config.php';
 
   // $link = mysqli_connect($host, $user, $password, $database)
   //   or die("Ошибка" . mysqli_error($link));
@@ -11,7 +11,7 @@
 
 <?php
   set_include_path('W:/domains/localhost/');
-  include_once('Music.com/Audio/php/head.php'); ?>
+  include_once('Music.com/audio/php/head.php'); ?>
 
   <body>
     <!-- <script type="text/javascript">

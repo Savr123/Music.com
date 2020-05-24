@@ -2,13 +2,13 @@
   set_include_path('W:/domains/localhost/');
 	require_once "config.php";
 	require 'Music.com/getID3-master/getid3/getid3.php';
-	require 'Music.com/Audio/php/metaMP3.php';
+	require 'Music.com/audio/php/metaMP3.php';
 ?>
 <html>
 	<head>
 		<title>Upload</title>
 		<?php
-			include_once('Music.com/Audio/php/head.php');
+			include_once('Music.com/audio/php/head.php');
 		?>
 		<script type="text/javascript">
 		setTimeout(function(){
@@ -60,7 +60,7 @@
                   else {
                     $track->name=$trackInfo["id3v2"]["comments"]["title"][0];
                   }
-                  $img_common_path="/Music.com/images/common/img_1.jpg";
+                  $img_common_path="images/common/img_1.jpg";
 
   								$song= R::dispense('song');
   									$song->path =$uploadfile;               		// путь к файлу трека

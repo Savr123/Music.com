@@ -3,5 +3,5 @@
   set_include_path('W:/domains/localhost/');
 
 	unset( $_SESSION['logged_user'] );
-  header('Location:/Music.com/main.php');
+  header('Location:/Music.com/index.php');
 ?>

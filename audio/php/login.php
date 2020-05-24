@@ -1,10 +1,11 @@
-<?php require_once 'config.php';
+<?php
 
   // $link = mysqli_connect($host, $user, $password, $database)
   //   or die("Ошибка" . mysqli_error($link));
 
-  set_include_path('W:/domains/localhost/');
-  include_once('Music.com/Audio/php/head.php');
+  set_include_path(realpath("../../"));
+  require_once 'audio/php/config.php';
+  include_once('audio/php/head.php');
 
   $data=$_POST;
   if( isset($data['do_login']) ){
@@ -14,7 +15,7 @@
         $_SESSION['logged_user']=$user;
       echo '<div class="alert alert-success">Вы успешно авторизованы</div>
         <script type="text/javascript">
-        window.location = "/Music.com/main.php";
+        window.location = "index.php";
         </script>';
       }
       else  $errors[]='Пользователь не найден';
@@ -30,7 +31,7 @@
     // code...
     unset($data);
     echo '<script type="text/javascript">
-    window.location = "/Music.com/Audio/php/signUp.php";
+    window.location = "signUp.php";
     </script>';
   }
 ?>

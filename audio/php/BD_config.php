@@ -1,10 +1,10 @@
 <?php
-require 'Music.com/Audio/php/metaMP3.php';
+  set_include_path("../../");
+  require 'audio/php/metaMP3.php';
   function fillBD(){
-    $dir="W:/domains/localhost/Music.com/audio/music/";
+    $dir="audio/music/";
     $files=scandir($dir);
     foreach ($files as $file) {
-      // code...
 
       $uploadfile = $dir . $file;
       echo $file;
@@ -12,8 +12,6 @@ require 'Music.com/Audio/php/metaMP3.php';
       move_uploaded_file($_FILES['upload_file']['tmp_name'], $uploadfile);
         $track = new CMP3File;
         $track->getid3($uploadfile);
-        // print_r($track);
-
         $song= R::dispense('song');
           $song->path =$uploadfile;               		// путь к файлу трека
           $song->datecreation =$track->year;   // дата выпуска

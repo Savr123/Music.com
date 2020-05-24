@@ -1,7 +1,7 @@
 <?php
-  include_once 'W:/domains/localhost/Music.com/Audio/php/header.php';
+  include_once 'W:/domains/localhost/Music.com/audio/php/header.php';
   set_include_path('W:/domains/localhost/');
-  include_once('Music.com/Audio/php/head.php');
+  include_once('Music.com/audio/php/head.php');
   $filter=1;
 ?>
 <body>
@@ -60,19 +60,19 @@
       <div class="border-bottom">
           <div class=" pagination-lg  loadframe">
             <div class="page-item" >
-              <a class="page-link spec-page-link text-dark border-0" data-src="Music.com/audio/tracks.php" href="/Music.com/Audio/profile.php?url=track&filter=1" tabindex="-1">Треки</a>
+              <a class="page-link spec-page-link text-dark border-0" data-src="Music.com/audio/tracks.php" href="Audio/profile.php?url=track&filter=1" tabindex="-1">Треки</a>
             </div>
             <div class="page-item">
-              <a class="page-link spec-page-link text-dark border-0" data-src="/Music.com/Audio/php/my_music/albums.php" href="/Music.com/audio/profile.php?url=Album&filter=2">Альбомы</a>
+              <a class="page-link spec-page-link text-dark border-0" data-src="audio/php/my_music/albums.php" href="audio/profile.php?url=Album&filter=2">Альбомы</a>
             </div>
             <div class="page-item">
-              <a class="page-link spec-page-link text-dark border-0" data-src="/Music.com/Audio/php/my_music/artists.php" href="/Music.com/audio/profile.php?url=artist&filter=3">Исполнители</a>
+              <a class="page-link spec-page-link text-dark border-0" data-src="audio/php/my_music/artists.php" href="audio/profile.php?url=artist&filter=3">Исполнители</a>
             </div>
             <div class="page-item">
-              <a class="page-link spec-page-link text-dark border-0" data-src="/Music.com/Audio/php/my_music/playlist.php" href="/Music.com/audio/profile.php?url=Playlist&filter=4">Плейлисты</a>
+              <a class="page-link spec-page-link text-dark border-0" data-src="audio/php/my_music/playlist.php" href="audio/profile.php?url=Playlist&filter=4">Плейлисты</a>
             </div>
             <div class="page-item">
-              <a class="page-link spec-page-link text-dark border-0" data-src="/Music.com/Audio/php/my_music/history.php" href="/Music.com/audio/profile.php?url=history&filter=5">История</a>
+              <a class="page-link spec-page-link text-dark border-0" data-src="audio/php/my_music/history.php" href="audio/profile.php?url=history&filter=5">История</a>
             </div>
           </div>
       </div>
@@ -115,7 +115,7 @@
         } ?>
       </div>
     <!-- <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="/Music.com/audio/tracks.php" width="100%" height="" id="frame"></iframe>
+      <iframe class="embed-responsive-item" src="audio/tracks.php" width="100%" height="" id="frame"></iframe>
     </div>
     <script type="text/javascript">
       $('.loadframe').on('click', function(){

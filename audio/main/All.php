@@ -1,7 +1,7 @@
 <?php
-  set_include_path('W:/domains/localhost/');
-  require_once 'Music.com/audio/php/config.php';
-  include_once('Music.com/Audio/php/head.php'); ?>
+  set_include_path('../../');
+  require_once 'audio/php/config.php';
+  include_once('audio/php/head.php'); ?>
 
   <!-- <nav class="flexy-nav">
     <button id="flexy-nav__toggle" class="flexy-nav__toggle">открыть</button>
@@ -15,7 +15,7 @@
       <input class="flexy-nav__search" type="text" placeholder="Type search terms and hit enter...">
     </form>
   </nav> -->
-  <?php include 'Music.com/audio/tracks.php'; ?>
+  <?php include 'audio/tracks.php'; ?>
 
 
 

@@ -2,7 +2,7 @@
   require_once "W:/domains/localhost/Music.com/audio/php/RedBeansPHP/rb.php";
   set_include_path('W:/domains/localhost/');
   include 'Music.com/audio/track-list.php';
-  // require_once "Music.com/Audio/php/config.php";
+  // require_once "Music.comaudio/php/config.php";
   require_once "Music.com/audio/mp3Class/mp3file.Class.php";
   require "Music.com/getID3-master/getid3/getid3.php";
 
@@ -22,7 +22,7 @@ $songs =  get_posts($page,$COUNT_PER_PAGE,$filter);
 
 if($_GET['move'] == 1) {
   foreach($songs as $song) {
-    $path="/Music.com/audio/music/".basename($song['path']);
+    $path="audio/music/".basename($song['path']);
     echo "<li class='list-group-item'>
       <div class='for_text d-flex'>
       <button class='btn btn-active spec-btn-play'>
@@ -52,10 +52,10 @@ if($_GET['move'] == 1) {
 }
 ?>
 <head>
-  <?php include_once('Music.com/Audio/php/head.php'); ?>
-  <script type="text/javascript" src="/Music.com/audio/script/jquery-3.4.1.js"></script>
-  <script type="text/javascript" src="/Music.com/audio/script/scriptTrack.js"></script>
-  <script type="text/javascript" src="/Music.com/audio/domurl-master/url.min.js"></script>
+  <?php include_once('Music.com/audio/php/head.php'); ?>
+  <script type="text/javascript" src="audio/script/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="audio/script/scriptTrack.js"></script>
+  <script type="text/javascript" src="audio/domurl-master/url.min.js"></script>
 </head>
 
 
