@@ -1,10 +1,10 @@
 <?php
-  require_once "W:/domains/localhost/Music.com/audio/php/RedBeansPHP/rb.php";
-  set_include_path('W:/domains/localhost/');
-  include 'Music.com/audio/track-list.php';
+  require_once "../php/RedBeansPHP/rb.php";
+  // set_include_path(realpath('../../'));
+  include '../track-list.php';
   // require_once "Music.comaudio/php/config.php";
-  require_once "Music.com/audio/mp3Class/mp3file.Class.php";
-  require "Music.com/getID3-master/getid3/getid3.php";
+  require_once "../mp3Class/mp3file.Class.php";
+  require "../getID3-master/getid3/getid3.php";
 
   $COUNT_PER_PAGE=10;
 if($_GET['page']) {

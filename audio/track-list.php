@@ -1,7 +1,21 @@
 <?php
-  require_once "Music.comaudio/php/config.php";
+  require_once "../audio/php/config.php";
+
+
   function get_posts($page,$count_per_page,$filter=0) {
     $start = ($page - 1)*$count_per_page;
+
+    //reconstruct with enum!
+    /** It could be redone with enum as a variable for filter object 
+     * enum could be like 
+     * enum Suit
+     *  {
+     *    case album;
+     *    case user;
+     *    case author;
+     *    case etc...
+     *  }
+    */
     switch ($_GET['filter']) {
       case 1:
         // code... uploaded by user tracks
@@ -63,6 +77,7 @@
     return $songs;
   }
 
+
   function get_id3($remotefilename){
     if ($fp_remote = fopen($remotefilename, 'rb')) {
         $localtempfilename = tempnam('/tmp', 'getID3');
@@ -82,8 +97,8 @@
     return $ThisFileInfo;
   }
 
-  function rel2abs($rel, $base)
-  {
+
+  function rel2abs($rel, $base){
       /* return if already absolute URL */
       if (parse_url($rel, PHP_URL_SCHEME) != '')
           return ($rel);
@@ -133,4 +148,5 @@
 
       return ($scheme . '://' . $abs);
   }
+
 ?>

@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once "RedBeansPHP/rb.php";
   R::setup('mysql:host=localhost;dbname=music',
         'root', '');
@@ -9,7 +10,6 @@
   $database = 'library'; // имя базы данных
   $password = ''; // пароль
 
-  session_start();
 
   // mysql_select_db('library') or die('Не удалось выбрать базу данных');
   // $link = mysqli_connect($host,$user,$password,$database);
