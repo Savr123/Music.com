@@ -1,5 +1,5 @@
 <?php
-  include_once 'W:/domains/localhost/Music.com/audio/php/header.php';
+  include_once __ROOT__.'/audio/php/header.php';
   set_include_path('W:/domains/localhost/');
   include_once('Music.com/audio/php/head.php');
   $filter=1;

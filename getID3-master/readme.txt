@@ -145,9 +145,10 @@ Writes:
 Requirements
 ===========================================================================
 
-* PHP 4.2.0 up to 5.2.x for getID3() 1.7.x (and earlier)
-* PHP 5.0.5 (or higher) for getID3() 1.8.x (and up)
-* PHP 5.0.5 (or higher) for getID3() 2.0.x (and up)
+* PHP 4.2.0 up to 5.2.x for getID3() 1.7.x  (and earlier)
+* PHP 5.0.5 (or higher) for getID3() 1.8.x  (and up)
+* PHP 5.3.0 (or higher) for getID3() 1.9.17 (and up)
+* PHP 5.3.0 (or higher) for getID3() 2.0.x  (and up)
 * at least 4MB memory for PHP. 8MB or more is highly recommended.
   12MB is required with all modules loaded.
 
@@ -624,3 +625,4 @@ Reference material:
 * http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/Nikon.html
 * http://www.codeproject.com/Articles/8295/MPEG-Audio-Frame-Header
 * http://dsd-guide.com/sites/default/files/white-papers/DSFFileFormatSpec_E.pdf
+* https://fileformats.fandom.com/wiki/Torrent_file

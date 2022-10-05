@@ -18,7 +18,7 @@
   		<main>
   			<div class="">
           <div class="p-1 text-center">
-            <?php include_once(realpath('/audio/mainPage.php')) ?>
+            <?php include_once(realpath('audio/mainPage.php')) ?>
   			  </div>
         </div>
   		</main>

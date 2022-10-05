@@ -3,9 +3,9 @@
   // $link = mysqli_connect($host, $user, $password, $database)
   //   or die("Ошибка" . mysqli_error($link));
 
-  set_include_path(realpath("../../"));
-  require_once 'audio/php/config.php';
-  include_once('audio/php/head.php');
+  define('__ROOT__', dirname(dirname(__FILE__)));
+  require_once __ROOT__.'/php/config.php';
+  include_once(__ROOT__.'/php/head.php');
 
   $data=$_POST;
   if( isset($data['do_login']) ){
@@ -28,7 +28,6 @@
 
 
   if( isset($data['signUp_link']) ){
-    // code...
     unset($data);
     echo '<script type="text/javascript">
     window.location = "signUp.php";

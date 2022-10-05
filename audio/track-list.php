@@ -1,5 +1,5 @@
 <?php
-  require_once "Music.comaudio/php/config.php";
+  require_once __ROOT__."/audio/php/config.php";
   function get_posts($page,$count_per_page,$filter=0) {
     $start = ($page - 1)*$count_per_page;
     switch ($_GET['filter']) {
